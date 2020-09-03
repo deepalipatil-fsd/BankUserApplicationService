@@ -1,0 +1,2 @@
+INSERT INTO ACCOUNT_HOLDER(ACCOUNT_NUMBER, ADDRESS, CONTACT_NO, COUNTRY, DOB, EMAIL, NAME, PAN, PASSWORD, STATE, USER_NAME, ACCOUNT_TYPE )
+                    VALUES('1234567890', 'Pune', '9999999999', 'India', parsedatetime('17-09-1997 18:47:52.69', 'dd-MM-yyyy hh:mm:ss.SS'), 'deepali@cts.com', 'Deepali', 'ASDFG0256H', 'deepali', 'MH', 'deepali15', 'Savings');
