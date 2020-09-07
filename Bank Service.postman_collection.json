@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "8f0f7996-9cb6-48d2-9d69-410088f94713",
+		"name": "Bank Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register Bank User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountNumber\": \"1234567891\",\r\n    \"name\": \"Deepali\",\r\n    \"userName\": \"deepali15\",\r\n    \"password\": \"deepali\",\r\n    \"address\": \"Pune\",\r\n    \"state\": \"MH\",\r\n    \"country\": \"India\",\r\n    \"email\": \"deepali@cts.com\",\r\n    \"pan\": \"TYHII0975D\",\r\n    \"contactNo\": \"9878965432\",\r\n    \"dob\": \"2019-04-28T14:45:15\",\r\n    \"accountType\": \"Savings\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/bank/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"bank",
+						"register"
+					]
+				},
+				"description": "Register"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Bank User Details",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountNumber\": \"1234567890\",\r\n    \"name\": \"Deepali\",\r\n    \"userName\": \"user\",\r\n    \"password\": \"password\",\r\n    \"address\": \"Pune\",\r\n    \"state\": \"MH\",\r\n    \"country\": \"India\",\r\n    \"email\": \"deepali@cts.com\",\r\n    \"pan\": \"ASDFG0987A\",\r\n    \"contactNo\": \"9878965432\",\r\n    \"dob\": \"2019-04-28T14:45:15\",\r\n    \"accountType\": \"Savings\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/bank/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"bank",
+						"update"
+					]
+				},
+				"description": "Register"
+			},
+			"response": []
+		},
+		{
+			"name": "New Update Bank User Details",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountNumber\": \"1234567890\",\r\n    \"name\": \"Deepali\",\r\n    \"userName\": \"user\",\r\n    \"password\": \"password\",\r\n    \"address\": \"Pune\",\r\n    \"state\": \"MH\",\r\n    \"country\": \"India\",\r\n    \"email\": \"deepali@cts.com\",\r\n    \"pan\": \"ASDFG0987A\",\r\n    \"contactNo\": \"9878965432\",\r\n    \"dob\": \"2019-04-28T14:45:15\",\r\n    \"accountType\": \"Savings\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8083/bank/user/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"bank",
+						"user",
+						"update"
+					]
+				},
+				"description": "Register"
+			},
+			"response": []
+		},
+		{
+			"name": "Apply For Loan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountNumber\": \"1234567890\",\r\n    \"loanType\": \"Education\",\r\n    \"loanAmount\":12345678,\r\n    \"rateOfInterest\": 0,\r\n    \"duration\": 4,\r\n    \"applicationDate\": \"2019-08-24T14:45:15\",\r\n    \"accountType\": \"Savings\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/loan/apply",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"loan",
+						"apply"
+					]
+				},
+				"description": "Register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"deepali15\",\r\n    \"password\": \"deepali\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/bank/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"bank",
+						"login"
+					]
+				},
+				"description": "Register"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Account Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/bank/accountdetails/1234567890",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"bank",
+						"accountdetails",
+						"1234567890"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Account Details Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/loan/loandetails/1234567890",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"loan",
+						"loandetails",
+						"1234567890"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
