@@ -22,19 +22,19 @@ public class BankRegistrationController {
             return  null;
         }
     }
-    @PostMapping("/login")
-    AccountHolder login(@RequestBody AccountHolder accountHolder) {
-        //Add code to check if user exist with same PAN. Not needed after adding unique constraint on PAN column.
-        try{
-            AccountHolder account = repository.findByUserName(accountHolder.getUserName());
-            if(ObjectUtils.isEmpty(account) || !account.getPassword().equalsIgnoreCase(accountHolder.getPassword()))
-                throw new RuntimeException("Login failed.");
-            return account;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return  null;
-        }
-    }
+//    @PostMapping("/login")
+//    AccountHolder login(@RequestBody AccountHolder accountHolder) {
+//        //Add code to check if user exist with same PAN. Not needed after adding unique constraint on PAN column.
+//        try{
+//            AccountHolder account = repository.findByUserNamePassword(accountHolder.getUserName(), accountHolder.getPassword());
+//            if(ObjectUtils.isEmpty(account))
+//                throw new RuntimeException("Login failed.");
+//            return account;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return  null;
+//        }
+//    }
     @PostMapping("/update")
     AccountHolder updateDetails(@RequestBody AccountHolder accountHolder) {
         try{
@@ -56,7 +56,7 @@ public class BankRegistrationController {
     }
     @GetMapping("/accountdetails/{accountNumber}")
     AccountHolder getAccount(@PathVariable("accountNumber") String accountNumber) {
-        return repository.findById(accountNumber).orElse(new AccountHolder());
+        return repository.findByAccountNumber(accountNumber);
     }
 
 }
