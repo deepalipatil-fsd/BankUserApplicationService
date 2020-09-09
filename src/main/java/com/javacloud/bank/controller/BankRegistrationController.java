@@ -3,8 +3,9 @@ package com.javacloud.bank.controller;
 import com.javacloud.bank.model.AccountHolder;
 import com.javacloud.bank.repository.RegistrationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/bank/")
@@ -38,9 +39,10 @@ public class BankRegistrationController {
     @PostMapping("/update")
     AccountHolder updateDetails(@RequestBody AccountHolder accountHolder) {
         try{
-            AccountHolder account = repository.findByUserName(accountHolder.getUserName());
-            if(ObjectUtils.isEmpty(account))
+            Optional<AccountHolder> accountFromDB = Optional.ofNullable(repository.findByUserName(accountHolder.getUserName()));
+            if(!accountFromDB.isPresent())
                 return null; // throw exception instead
+            AccountHolder account = accountFromDB.get();
             account.setName(accountHolder.getName());
             account.setPassword(accountHolder.getPassword());
             account.setAddress(accountHolder.getAddress());
