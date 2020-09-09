@@ -89,13 +89,13 @@
 					"type": "basic",
 					"basic": [
 						{
-							"key": "username",
-							"value": "user",
+							"key": "password",
+							"value": "password",
 							"type": "string"
 						},
 						{
-							"key": "password",
-							"value": "password",
+							"key": "username",
+							"value": "user",
 							"type": "string"
 						}
 					]
@@ -188,7 +188,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userName\": \"deepali15\",\r\n    \"password\": \"deepali\"\r\n}"
+					"raw": ""
 				},
 				"url": {
 					"raw": "http://localhost:8081/logout",
