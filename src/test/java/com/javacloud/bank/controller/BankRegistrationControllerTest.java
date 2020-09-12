@@ -9,6 +9,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Date;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
@@ -33,8 +35,19 @@ public class BankRegistrationControllerTest {
 	@Test
 	public void testRegisterUser() throws Exception {
 		AccountHolder account = new AccountHolder();
+		Date dob = new Date();
+		account.setAccountNumber("123456789");
+		account.setState("MAH");
+		account.setPan("MAHOP6743W");
+		account.setAccountType("Savings");
+		account.setDob(dob);
 		when(repository.save(any(AccountHolder.class))).thenReturn(account);
-		Assert.assertNotNull(controller.register(account));
+		AccountHolder resultAccount = controller.register(account);
+		Assert.assertEquals("123456789", resultAccount.getAccountNumber());
+		Assert.assertEquals("MAH", resultAccount.getState());
+		Assert.assertEquals("MAHOP6743W", resultAccount.getPan());
+		Assert.assertEquals("Savings", resultAccount.getAccountType());
+		Assert.assertEquals(dob, resultAccount.getDob());
 	}
 
 	@Test
