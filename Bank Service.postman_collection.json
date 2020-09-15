@@ -21,14 +21,15 @@
 					"raw": "{\r\n    \"accountNumber\": \"1234567891\",\r\n    \"name\": \"Deepali\",\r\n    \"userName\": \"deepali15\",\r\n    \"password\": \"deepali\",\r\n    \"address\": \"Pune\",\r\n    \"state\": \"MH\",\r\n    \"country\": \"India\",\r\n    \"email\": \"deepali@cts.com\",\r\n    \"pan\": \"TYHII0975D\",\r\n    \"contactNo\": \"9878965432\",\r\n    \"dob\": \"2019-04-28T14:45:15\",\r\n    \"accountType\": \"Savings\"\r\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8081/bank/register",
+					"raw": "http://localhost:8083/bank/user/register",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8081",
+					"port": "8083",
 					"path": [
 						"bank",
+						"user",
 						"register"
 					]
 				},
@@ -40,19 +41,7 @@
 			"name": "Update Bank User Details",
 			"request": {
 				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
-						},
-						{
-							"key": "username",
-							"value": "user",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "POST",
 				"header": [
@@ -64,7 +53,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"accountNumber\": \"1234567890\",\r\n    \"name\": \"Deepali\",\r\n    \"userName\": \"user\",\r\n    \"password\": \"password\",\r\n    \"address\": \"Pune\",\r\n    \"state\": \"MH\",\r\n    \"country\": \"India\",\r\n    \"email\": \"deepali@cts.com\",\r\n    \"pan\": \"ASDFG0987A\",\r\n    \"contactNo\": \"9878965432\",\r\n    \"dob\": \"2019-04-28T14:45:15\",\r\n    \"accountType\": \"Savings\"\r\n}"
+					"raw": "{\r\n    \"accountNumber\": \"12345678901\",\r\n    \"name\": \"Deepali\",\r\n    \"userName\": \"user\",\r\n    \"password\": \"password\",\r\n    \"address\": \"Pune\",\r\n    \"state\": \"MH\",\r\n    \"country\": \"India\",\r\n    \"email\": \"deepali@cts.com\",\r\n    \"pan\": \"ASDFG0987A\",\r\n    \"contactNo\": \"9878965432\",\r\n    \"dob\": \"2019-04-28T14:45:15\",\r\n    \"accountType\": \"Savings\"\r\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8081/bank/update",
@@ -110,7 +99,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"accountNumber\": \"1234567890\",\r\n    \"name\": \"Deepali1\",\r\n    \"userName\": \"user\",\r\n    \"password\": \"password\",\r\n    \"address\": \"Pune\",\r\n    \"state\": \"MH\",\r\n    \"country\": \"India\",\r\n    \"email\": \"deepali@cts.com\",\r\n    \"pan\": \"ASDFG0987A\",\r\n    \"contactNo\": \"9878965432\",\r\n    \"dob\": \"2019-04-28T14:45:15\",\r\n    \"accountType\": \"Savings\"\r\n}"
+					"raw": "{\r\n    \"accountNumber\": \"1234567890\",\r\n    \"name\": \"Deepali Nanaso\",\r\n    \"userName\": \"user\",\r\n    \"password\": \"password\",\r\n    \"address\": \"Pune\",\r\n    \"state\": \"MH\",\r\n    \"country\": \"India\",\r\n    \"email\": \"deepali@cts.com\",\r\n    \"pan\": \"ASDFG0987A\",\r\n    \"contactNo\": \"9878965432\",\r\n    \"dob\": \"2019-04-28T14:45:15\",\r\n    \"accountType\": \"Savings\"\r\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8083/bank/user/update",
@@ -132,6 +121,21 @@
 		{
 			"name": "Apply For Loan",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -142,16 +146,18 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"accountNumber\": \"1234567890\",\r\n    \"loanType\": \"Education\",\r\n    \"loanAmount\":12345678,\r\n    \"rateOfInterest\": 0,\r\n    \"duration\": 4,\r\n    \"applicationDate\": \"2019-08-24T14:45:15\",\r\n    \"accountType\": \"Savings\"\r\n}"
+					"raw": "{\r\n    \"accountNumber\": \"12345678902\",\r\n    \"loanType\": \"Education\",\r\n    \"loanAmount\":12345678,\r\n    \"rateOfInterest\": 0,\r\n    \"duration\": 4,\r\n    \"applicationDate\": \"2019-08-24T14:45:15\",\r\n    \"accountType\": \"Savings\"\r\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8082/loan/apply",
+					"raw": "http://localhost:8083/bank/user/loan/apply",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8082",
+					"port": "8083",
 					"path": [
+						"bank",
+						"user",
 						"loan",
 						"apply"
 					]
@@ -191,12 +197,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8081/logout",
+					"raw": "http://localhost:8083/logout",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8081",
+					"port": "8083",
 					"path": [
 						"logout"
 					]
@@ -226,16 +232,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/bank/accountdetails/1234567890",
+					"raw": "http://localhost:8083/bank/user/12345678901",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8081",
+					"port": "8083",
 					"path": [
 						"bank",
-						"accountdetails",
-						"1234567890"
+						"user",
+						"12345678901"
 					]
 				}
 			},
@@ -244,18 +250,34 @@
 		{
 			"name": "Get Loan Details",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8082/loan/loandetails/1234567890",
+					"raw": "http://localhost:8083/bank/user/loan/1234567890",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8082",
+					"port": "8083",
 					"path": [
+						"bank",
+						"user",
 						"loan",
-						"loandetails",
 						"1234567890"
 					]
 				}
