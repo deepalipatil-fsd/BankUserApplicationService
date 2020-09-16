@@ -22,6 +22,6 @@ public class BankApplication  implements CommandLineRunner {
 	}
 	@Override
 	public void run(String... args) {
-		repository.save(new AccountHolder(null, "1234567890", "Deepali", "user", "password", "Pune", "Mah", "India", "deepali@cts.com", "ASDFG0987A", "9898989898", new Date("12/12/1998"), "Savings"));
+		repository.save(new AccountHolder(null, "1234567890", "Deepali", "user", "AIDTAIiCazaQavILI07rtA==", "Pune", "Mah", "India", "deepali@cts.com", "ASDFG0987A", "9898989898", new Date("12/12/1998"), "Savings"));
 	}
 }
