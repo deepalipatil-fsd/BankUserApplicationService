@@ -1,11 +1,11 @@
 package com.javacloud.bank.model;
 
-import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.util.Date;
 
 @Data
@@ -24,6 +24,7 @@ public class AccountHolder {
     private String address;
     private String state;
     private String country;
+    @Email
     private String email;
     //@UniqueConstraint("pan")
     @Column(unique=true)
